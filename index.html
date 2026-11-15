@@ -2,650 +2,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taj Book Depot | Books & Stationery</title>
-<meta name="description" content="Taj Book Depot - Your trusted bookstore for books and stationery in Ranchi, Jharkhand.">
-
-<style>
-:root {
-  --gold: #b58a45;
-  --gold-light: #e8d5ad;
-  --dark: #29251e;
-  --cream: #faf8f3;
-  --glass: rgba(255,255,255,.72);
-  --border: rgba(181,138,69,.20);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: var(--dark);
-  background:
-    radial-gradient(circle at 10% 10%, #fff4df, transparent 35%),
-    radial-gradient(circle at 90% 40%, #f2e8d7, transparent 35%),
-    #faf9f6;
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.container {
-  width: min(1160px, 90%);
-  margin: auto;
-}
-
-/* NAVIGATION */
-
-.navbar {
-  position: sticky;
-  top: 12px;
-  z-index: 100;
-  width: min(1160px, 94%);
-  margin: 12px auto;
-  padding: 13px 22px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  background: rgba(255,255,255,.78);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 30px #8c73421a;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-.brand {
-  font-size: 21px;
-  font-weight: 800;
-  color: #6f5124;
-  letter-spacing: .4px;
-}
-
-.brand span {
-  color: var(--gold);
-}
-
-.nav-links {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  font-size: 14px;
-}
-
-.nav-links a:hover {
-  color: var(--gold);
-}
-
-.nav-contact {
-  background: linear-gradient(135deg,#c8a66b,#a87a36);
-  color: white;
-  padding: 10px 17px;
-  border-radius: 30px;
-  font-weight: 600;
-}
-
-/* HERO */
-
-.hero {
-  padding: 65px 0 75px;
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  align-items: center;
-  gap: 45px;
-}
-
-.eyebrow {
-  color: #a17b40;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 18px;
-}
-
-.hero h1 {
-  font-size: clamp(40px,6vw,70px);
-  line-height: 1.1;
-  color: #302a20;
-  margin-bottom: 22px;
-}
-
-.hero h1 span {
-  color: var(--gold);
-}
-
-.hero p {
-  font-size: 17px;
-  color: #71695d;
-  max-width: 500px;
-  margin-bottom: 25px;
-}
-
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 13px 22px;
-  border-radius: 30px;
-  font-weight: 650;
-  transition: .25s;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px #9e7b4230;
-}
-
-.btn-gold {
-  background: linear-gradient(135deg,#d8bb83,#a77b3a);
-  color: white;
-}
-
-.btn-glass {
-  background: rgba(255,255,255,.8);
-  border: 1px solid var(--border);
-  color: #73562c;
-}
-
-.hero-image {
-  background: var(--glass);
-  padding: 12px;
-  border-radius: 30px;
-  border: 1px solid white;
-  box-shadow: 0 20px 55px #8a714329;
-  backdrop-filter: blur(18px);
-}
-
-.hero-image img {
-  display: block;
-  width: 100%;
-  height: 390px;
-  object-fit: cover;
-  border-radius: 22px;
-}
-
-/* GLASS PANELS */
-
-.glass {
-  background: var(--glass);
-  border: 1px solid white;
-  border-radius: 22px;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 10px 35px #9c82431a;
-}
-
-.section {
-  padding: 55px 0;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.section-heading h2 {
-  font-size: clamp(28px,4vw,40px);
-  color: #403522;
-  margin-bottom: 8px;
-}
-
-.section-heading p {
-  color: #817666;
-}
-
-/* CATEGORIES */
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
-}
-
-.category {
-  padding: 28px 22px;
-  text-align: center;
-  transition: .3s;
-}
-
-.category:hover {
-  transform: translateY(-7px);
-  border-color: var(--gold-light);
-  box-shadow: 0 18px 40px #a1844026;
-}
-
-.category .emoji {
-  font-size: 39px;
-  margin-bottom: 12px;
-}
-
-.category h3 {
-  color: #74572e;
-  margin-bottom: 7px;
-}
-
-.category p {
-  color: #817666;
-  font-size: 14px;
-}
-
-/* GALLERY */
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 18px;
-}
-
-.photo {
-  overflow: hidden;
-  padding: 8px;
-}
-
-.photo img {
-  display: block;
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 15px;
-  transition: transform .4s;
-}
-
-.photo:hover img {
-  transform: scale(1.045);
-}
-
-/* ABOUT */
-
-.about-card {
-  padding: 38px;
-  text-align: center;
-}
-
-.about-card p {
-  color: #756d60;
-  max-width: 760px;
-  margin: 12px auto;
-}
-
-/* CONTACT */
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 20px;
-}
-
-.contact-card {
-  padding: 27px;
-}
-
-.contact-card h3 {
-  color: #8b6835;
-  margin-bottom: 10px;
-}
-
-.contact-card p {
-  color: #756d60;
-  margin: 6px 0;
-}
-
-/* FOOTER */
-
-footer {
-  margin-top: 45px;
-  background: rgba(255,255,255,.8);
-  border-top: 1px solid var(--border);
-  text-align: center;
-  padding: 28px 15px;
-  color: #817666;
-}
-
-footer strong {
-  color: #8d6834;
-}
-
-/* WHATSAPP FLOAT */
-
-.whatsapp {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  z-index: 200;
-  background: #20bd68;
-  color: white;
-  padding: 14px 19px;
-  border-radius: 40px;
-  box-shadow: 0 8px 25px #188b4b45;
-  font-weight: 700;
-  transition: .2s;
-}
-
-.whatsapp:hover {
-  transform: scale(1.06);
-}
-
-/* MOBILE */
-
-@media(max-width:750px) {
-  .navbar {
-    padding: 12px 14px;
-  }
-
-  .brand {
-    font-size: 17px;
-  }
-
-  .nav-links {
-    gap: 12px;
-    font-size: 12px;
-  }
-
-  .nav-contact {
-    display: none;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    padding-top: 42px;
-    gap: 28px;
-  }
-
-  .hero-image img {
-    height: 280px;
-  }
-
-  .category-grid {
-    grid-template-columns: repeat(2,1fr);
-    gap: 12px;
-  }
-
-  .category {
-    padding: 20px 12px;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(2,1fr);
-    gap: 10px;
-  }
-
-  .photo img {
-    height: 175px;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-card {
-    padding: 25px 17px;
-  }
-}
-
-@media(max-width:380px) {
-  .nav-links {
-    gap: 8px;
-  }
-
-  .category-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taj Book Depot | Books & Stationery in Ranchi</title>
+  <meta name="description" content="Visit Taj Book Depot in Ranchi for school books, college books, competitive exam books and stationery. Contact us on WhatsApp.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f8fc;
+      color: #17243a;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #102b50;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #d9e8ff;
+    }
+
+    .hero {
+      padding: 65px 7%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      background: white;
+    }
+
+    .hero h1 {
+      color: #102b50;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: #52647b;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 5px solid #e4edf8;
+      box-shadow: 0 12px 30px rgba(16, 43, 80, 0.13);
+    }
+
+    .button {
+      display: inline-block;
+      background: #102b50;
+      color: white;
+      padding: 13px 23px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px 8px 5px 0;
+    }
+
+    .button:hover {
+      background: #1c4778;
+    }
+
+    .button.whatsapp {
+      background: #168b55;
+    }
+
+    section {
+      padding: 55px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #102b50;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 18px;
+    }
+
+    .category {
+      background: white;
+      border: 1px solid #e0e9f4;
+      border-radius: 13px;
+      padding: 25px 15px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(16, 43, 80, 0.05);
+    }
+
+    .category h3 {
+      color: #163b67;
+      font-size: 18px;
+    }
+
+    .about {
+      background: #eaf1fa;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 750px;
+      margin: auto;
+      color: #465b75;
+      font-size: 17px;
+    }
+
+    .contact {
+      background: white;
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 10px 0;
+      color: #465b75;
+      font-size: 17px;
+    }
+
+    footer {
+      background: #102b50;
+      color: white;
+      text-align: center;
+      padding: 22px 15px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 14px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+      }
+
+      .hero img {
+        height: 260px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+  <header>
+    <div class="logo">TAJ BOOK DEPOT</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#categories">Books</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<nav class="navbar">
-  <a class="brand" href="#home">📚 TAJ <span>BOOK DEPOT</span></a>
+  <main>
+    <div class="hero" id="home">
+      <div>
+        <h1>Your Trusted Book & Stationery Store</h1>
+        <p>
+          Find school books, college books, competitive exam preparation
+          books and everyday stationery at Taj Book Depot, Ranchi.
+        </p>
+        <a class="button" href="#categories">Explore Categories</a>
+        <a class="button whatsapp"
+           href="https://wa.me/919304514659"
+           target="_blank" rel="noopener">
+          WhatsApp Us
+        </a>
+      </div>
 
-  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#categories">Books</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </div>
-
-  <a class="nav-contact" href="https://wa.me/919304514659">
-    Enquire Now
-  </a>
-</nav>
-
-<main>
-
-<!-- HERO -->
-
-<section class="hero container" id="home">
-
-  <div>
-    <div class="eyebrow">Books • Stationery • Learning</div>
-
-    <h1>
-      Every book opens a
-      <span>new world.</span>
-    </h1>
-
-    <p>
-      Welcome to Taj Book Depot. Discover books,
-      stationery and everyday learning essentials
-      at your trusted neighbourhood bookstore.
-    </p>
-
-    <div class="buttons">
-      <a class="btn btn-gold" href="#categories">
-        Explore Our Store →
-      </a>
-
-      <a class="btn btn-glass"
-         href="https://wa.me/919304514659?text=Hello%20Taj%20Book%20Depot">
-        WhatsApp Us
-      </a>
-    </div>
-  </div>
-
-  <div class="hero-image">
-    <img src="Shop-front.jpeg"
-         alt="Taj Book Depot storefront"
-         onerror="this.src='Shop-inside-1.jpeg'">
-  </div>
-
-</section>
-
-<!-- CATEGORIES -->
-
-<section class="section container" id="categories">
-
-  <div class="section-heading">
-    <div class="eyebrow">Explore Our Collection</div>
-    <h2>What Are You Looking For?</h2>
-    <p>Everything you need for reading, writing and learning.</p>
-  </div>
-
-  <div class="category-grid">
-
-    <div class="glass category">
-      <div class="emoji">📘</div>
-      <h3>School Books</h3>
-      <p>Learning resources for school students.</p>
+      <div>
+        <img src="Shop-front.jpeg" alt="Front view of Taj Book Depot">
+      </div>
     </div>
 
-    <div class="glass category">
-      <div class="emoji">📗</div>
-      <h3>College Books</h3>
-      <p>Academic and reference books.</p>
-    </div>
+    <section id="categories">
+      <h2 class="section-title">What We Offer</h2>
 
-    <div class="glass category">
-      <div class="emoji">📙</div>
-      <h3>Competitive Exams</h3>
-      <p>Preparation and study materials.</p>
-    </div>
+      <div class="categories">
+        <div class="category"><h3>School Books</h3></div>
+        <div class="category"><h3>College Books</h3></div>
+        <div class="category"><h3>Competitive Exam Books</h3></div>
+        <div class="category"><h3>Stationery</h3></div>
+        <div class="category"><h3>Notebooks</h3></div>
+        <div class="category"><h3>Art & Craft Supplies</h3></div>
+      </div>
+    </section>
 
-    <div class="glass category">
-      <div class="emoji">✏️</div>
-      <h3>Stationery</h3>
-      <p>Writing and everyday stationery essentials.</p>
-    </div>
+    <section class="about" id="about">
+      <h2 class="section-title">About Taj Book Depot</h2>
+      <p>
+        Taj Book Depot is a book sellers and stationers shop located
+        at Iqra Masjid Complex, Main Road, Ranchi. We aim to help
+        students, parents and readers find the books and stationery
+        they need.
+      </p>
+    </section>
 
-    <div class="glass category">
-      <div class="emoji">📓</div>
-      <h3>Notebooks</h3>
-      <p>Notebooks and paper products.</p>
-    </div>
+    <section class="contact" id="contact">
+      <h2 class="section-title">Visit Our Store</h2>
 
-    <div class="glass category">
-      <div class="emoji">🎨</div>
-      <h3>Art Supplies</h3>
-      <p>Drawing and creative materials.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- GALLERY -->
-
-<section class="section container" id="gallery">
-
-  <div class="section-heading">
-    <div class="eyebrow">A Look Inside</div>
-    <h2>Our Store Gallery</h2>
-    <p>Welcome to the world of Taj Book Depot.</p>
-  </div>
-
-  <div class="gallery">
-
-    <div class="glass photo">
-      <img src="Shop-front.jpeg" alt="Shop front">
-    </div>
-
-    <div class="glass photo">
-      <img src="Shop-inside-1.jpeg" alt="Shop interior 1">
-    </div>
-
-    <div class="glass photo">
-      <img src="Shop-inside-2.jpeg" alt="Shop interior 2">
-    </div>
-
-    <div class="glass photo">
-      <img src="Shop-inside-3.jpeg" alt="Shop interior 3">
-    </div>
-
-    <div class="glass photo">
-      <img src="Shop-inside-4.jpeg" alt="Shop interior 4">
-    </div>
-
-    <div class="glass photo">
-      <img src="Shop-inside-5.jpeg" alt="Shop interior 5">
-    </div>
-
-  </div>
-</section>
-
-<!-- ABOUT -->
-
-<section class="section container">
-
-  <div class="glass about-card">
-    <div class="eyebrow">Our Store</div>
-    <h2>Welcome to Taj Book Depot</h2>
-
-    <p>
-      We are a local book sellers and stationers shop
-      serving readers, students and families.
-      Visit us to explore books and stationery
-      for your everyday needs.
-    </p>
-
-    <a class="btn btn-gold"
-       href="https://wa.me/919304514659">
-       Contact Our Shop
-    </a>
-  </div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="section container" id="contact">
-
-  <div class="section-heading">
-    <div class="eyebrow">We Are Here For You</div>
-    <h2>Visit Our Store</h2>
-    <p>We look forward to welcoming you.</p>
-  </div>
-
-  <div class="contact-grid">
-
-    <div class="glass contact-card">
-      <h3>📍 Shop Address</h3>
       <p><strong>TAJ BOOK DEPOT</strong></p>
-      <p>Book Sellers & Stationers</p>
-      <p>Iqra Masjid Complex, Shop No. A-11,</p>
-      <p>Main Road, Ranchi, Jharkhand, India.</p>
+      <p>Iqra Masjid Complex, Shop No. A-11, Main Road, Ranchi, Jharkhand, India</p>
+      <p>Mobile: +91 9304514659</p>
+      <p>Alternate: +91 8789266795</p>
 
-      <br>
-
-      <a class="btn btn-gold"
-         href="https://www.google.com/maps/search/?api=1&query=Iqra+Masjid+Complex+Ranchi+Jharkhand"
+      <a class="button"
+         href="https://www.google.com/maps/search/?api=1&query=Iqra+Masjid+Complex+Main+Road+Ranchi"
          target="_blank" rel="noopener">
-         Get Directions →
+        Get Directions
       </a>
-    </div>
 
-    <div class="glass contact-card">
-      <h3>📞 Contact Details</h3>
-
-      <p><strong>WhatsApp / Mobile:</strong></p>
-      <p>+91 9304514659</p>
-
-      <p><strong>Alternate Mobile:</strong></p>
-      <p>+91 8789266795</p>
-
-      <br>
-
-      <a class="btn btn-gold"
-         href="https://wa.me/919304514659?text=Hello%20Taj%20Book%20Depot">
-         Message Us on WhatsApp
+      <a class="button whatsapp"
+         href="https://wa.me/919304514659"
+         target="_blank" rel="noopener">
+        Chat on WhatsApp
       </a>
-    </div>
+    </section>
+  </main>
 
-  </div>
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer>
-  <p><strong>TAJ BOOK DEPOT</strong></p>
-  <p>Books • Stationery • Learning</p>
-  <p>© 2026 Taj Book Depot. All rights reserved.</p>
-  <p>Made with care for book lovers.</p>
-</footer>
-
-<!-- FLOATING WHATSAPP -->
-
-<a class="whatsapp"
-   href="https://wa.me/919304514659?text=Hello%20Taj%20Book%20Depot">
-   ☎ WhatsApp
-</a>
+  <footer>
+    <p>© 2026 Taj Book Depot. All Rights Reserved.</p>
+    <p>Books, Knowledge & Learning.</p>
+  </footer>
 
 </body>
 </html>
